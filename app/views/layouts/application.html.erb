@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deep Mountain</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <% if Setting.google_analytics_tracker.present? %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Setting.google_analytics_tracker %>"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '<%= Setting.google_analytics_tracker %>');
+      </script>
+    <% end %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon(:camel_case => true, :camel_depth => :recursive) %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <div class="background">
+      <div class="banner-container">
+        <div class="banner" />
+      </div>
+      <div class="container">
+        <h1>Deep Mountain</h1>
+        <% if notice%>
+          <div class="alert alert-warning text-center" role="alert"><%= notice %></div>
+        <% end%>
+        <% if alert%>
+          <div class="alert alert-primary text-center" role="alert"><%= alert %></div>
+        <% end%>
+
+        <%= yield %>
+
+        <% if current_user&.is_admin? %>
+          <footer class="text-center">
+            <a href="/admin">Admin Site</a>
+          </footer>
+        <% end %>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

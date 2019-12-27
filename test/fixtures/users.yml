@@ -1,0 +1,21 @@
+kyle:
+  first_name: Kyle
+  last_name: Fritz
+  email: <%= User::KYLE_EMAIL %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'robots') %>
+  is_admin: true
+  phone: 555-123-4567
+
+meg:
+  first_name: Meghan
+  last_name: Ames
+  email: <%= User::MEG_EMAIL %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'wine') %>
+  is_admin: true
+
+ljf:
+  first_name: Laura
+  last_name: Flamm
+  email: laura-fake-email@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'sparkles') %>
+  is_admin: false
