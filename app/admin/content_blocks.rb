@@ -11,8 +11,9 @@ ActiveAdmin.register ContentBlock do
     column :title
     column :images do |block|
       if image = block.images.first
-        span link_to(image_tag(image, style: 'height:100px;width:auto;', alt: block.name), admin_content_block_path(block))
+        span image_tag(image.representation(resize_to_limit: [100, 100]), alt: block.name)
         if block.images.size > 1
+          br
           status_tag true, label: " + #{block.images.size - 1}"
         end
       end
@@ -33,7 +34,7 @@ ActiveAdmin.register ContentBlock do
       row :title
       row :images do |block|
         block.images.map do |image|
-          image_tag(image, style: 'height:100px;width:auto;', alt: block.name)
+          image_tag(image.representation(resize_to_limit: [100, 100]), alt: block.name)
         end
       end
       row :created_at
