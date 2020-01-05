@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :content_blocks
   devise_for :users
   ActiveAdmin.routes(self)
 

@@ -1,8 +1,6 @@
-$container-max-widths: (
-  sm: 420px,
-  md: 640px,
-  lg: 680px
-);
+@import "trix/dist/trix";
+@import "actiontext";
+@import "scaffolds";
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";

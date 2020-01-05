@@ -1,4 +1,4 @@
-module ContentBlockHelper
+module ContentBlocksHelper
   def b(name)
     if @blocks.key?(name)
       @blocks[name].content
