@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_05_220202) do
+ActiveRecord::Schema.define(version: 2020_01_05_220818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 2020_01_05_220202) do
     t.string "title"
     t.bigint "content_type_id", null: false
     t.bigint "page_id", null: false
+    t.date "date"
   end
 
   create_table "content_types", force: :cascade do |t|

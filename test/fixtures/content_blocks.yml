@@ -1,11 +1,14 @@
 home_welcome:
   page: home
   name: Welcome
+  content_type: item
 
 home_event1:
   page: home
   name: Event1
+  content_type: item
 
 next_welcome:
   page: history
   name: Welcome
+  content_type: history
