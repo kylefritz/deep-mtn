@@ -1,9 +1,12 @@
-class GonFooter < ActiveAdmin::Component
+class ExtraIncludesFooter < ActiveAdmin::Component
   builder_method :footer
 
   def build(namespace)
     # app/view/active_admin/base/_include_gon.html.erb
     render partial: "include_gon"
+
+    # app/view/active_admin/base/_include_admin_js_pack.html.erb
+    render partial: "include_admin_js_pack"
   end
 end
 
@@ -335,5 +338,5 @@ ActiveAdmin.setup do |config|
   #
   # config.order_clause = MyOrderClause
 
-  config.view_factory.register footer: GonFooter
+  config.view_factory.register footer: ExtraIncludesFooter
 end

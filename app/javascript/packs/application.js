@@ -24,5 +24,6 @@ Sentry.init({ dsn: "https://684945c88f8c464ba5afdff9f4b07f83@sentry.io/1773894" 
 import ahoy from 'ahoy.js';
 ahoy.trackAll();
 
+// actiontext
 require("trix")
 require("@rails/actiontext")
