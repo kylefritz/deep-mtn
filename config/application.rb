@@ -17,8 +17,11 @@ module DeepMountain
     # the framework and any gems in your application.
 
     # OliveBranch converts snake_case to camelCase
-    config.middleware.use OliveBranch::Middleware
-    config.middleware.use OliveBranch::Middleware, inflection: "camel"
+    config.middleware.use OliveBranch::Middleware, inflection: "camel", exclude_params: -> (env) {
+      env['PATH_INFO'].match(/^\/rails/)
+    }, exclude_response: -> (env) {
+      env['PATH_INFO'].match(/^\/rails/)
+    }
 
     # zeitwerk makes ruby file autoloading better?
     config.autoloader = :zeitwerk
