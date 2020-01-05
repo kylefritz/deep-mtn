@@ -1,11 +1,13 @@
 <div id="react"></div>
 <%= javascript_pack_tag 'camp' %>
 
+<%= content(:yo) %>
 
-<%= b(:yo) %>
+<%= content(:Friday) %>
 
-<%= b(:Friday) %>
+<%= content(:Saturday) %>
 
-<%= b(:Saturday) %>
-
-<%= b(:Sunday) %>
+<% list(:Sunday).each do|s| %>
+  <h1><%= "title=#{s.title} name=#{s.name}" %></h1>
+  <%= s.content %>
+<% end %>

@@ -1,13 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 home_welcome:
-  page: Home
+  page: home
   name: Welcome
 
 home_event1:
-  page: Home
+  page: home
   name: Event1
 
 next_welcome:
-  page: Next
+  page: history
   name: Welcome

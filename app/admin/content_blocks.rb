@@ -1,12 +1,13 @@
 ActiveAdmin.register ContentBlock do
-  permit_params :page, :name, :title, :content, images: []
-  config.sort_order = "LOWER(page), LOWER(name), LOWER(title)"
+  permit_params :page_id, :content_type_id, :name, :title, :content, images: []
+  config.sort_order = "LOWER(page), LOWER(content_type), LOWER(name), LOWER(title)"
 
   index do
     selectable_column
 
     column :id
     column :page
+    column :content_type
     column :name
     column :title
     column :images do |block|
@@ -31,6 +32,7 @@ ActiveAdmin.register ContentBlock do
     attributes_table do
       row :page
       row :name
+      row :content_type
       row :title
       row :images do |block|
         block.images.map do |image|

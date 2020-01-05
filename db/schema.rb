@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_05_195245) do
+ActiveRecord::Schema.define(version: 2020_01_05_220202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,11 +175,25 @@ ActiveRecord::Schema.define(version: 2020_01_05_195245) do
 
   create_table "content_blocks", force: :cascade do |t|
     t.string "name", null: false
-    t.string "page", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
-    t.index ["page", "name"], name: "index_content_blocks_on_page_and_name", unique: true
+    t.bigint "content_type_id", null: false
+    t.bigint "page_id", null: false
+  end
+
+  create_table "content_types", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_content_types_on_name", unique: true
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_pages_on_name", unique: true
   end
 
   create_table "settings", force: :cascade do |t|

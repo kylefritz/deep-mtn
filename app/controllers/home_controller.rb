@@ -2,9 +2,8 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def show
-    blocks = ContentBlock.all#.includes(:content)
-    @blocks = ActiveSupport::HashWithIndifferentAccess.new(Hash[blocks.collect { |b| [b.name, b] } ])
-
+    #TODO: eager load .includes(:content)
+    @blocks = helpers.prep_blocks(ContentBlock.all.includes(:content_type))
     render "show"
   end
 
