@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+home_welcome:
+  page: Home
+  name: Welcome
+
+home_event1:
+  page: Home
+  name: Event1
+
+next_welcome:
+  page: Next
+  name: Welcome
