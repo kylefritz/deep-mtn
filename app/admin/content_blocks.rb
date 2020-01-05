@@ -1,7 +1,6 @@
 ActiveAdmin.register ContentBlock do
-  permit_params :page, :name, :title, :content, :image
-  config.sort_order = "LOWER(page), LOWER(name)"
-
+  permit_params :page, :name, :title, :content, images: []
+  config.sort_order = "LOWER(page), LOWER(name), LOWER(title)"
 
   index do
     selectable_column
@@ -10,9 +9,12 @@ ActiveAdmin.register ContentBlock do
     column :page
     column :name
     column :title
-    column :image do |block|
-      if block.image.attached?
-        span link_to(image_tag(block.image, size: "100x100", alt: block.name), admin_content_block_path(block))
+    column :images do |block|
+      if image = block.images.first
+        span link_to(image_tag(image, style: 'height:100px;width:auto;', alt: block.name), admin_content_block_path(block))
+        if block.images.size > 1
+          status_tag true, label: " + #{block.images.size - 1}"
+        end
       end
     end
     column :content do |b|
@@ -29,9 +31,9 @@ ActiveAdmin.register ContentBlock do
       row :page
       row :name
       row :title
-      row :image do |block|
-        if block.image.attached?
-          image_tag url_for(block.image)
+      row :images do |block|
+        block.images.map do |image|
+          image_tag(image, style: 'height:100px;width:auto;', alt: block.name)
         end
       end
       row :created_at
