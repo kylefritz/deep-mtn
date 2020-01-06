@@ -3,7 +3,7 @@ module ContentBlocksHelper
   def prep_blocks(blocks)
     ActiveSupport::HashWithIndifferentAccess.new([]).tap do |h|
       blocks.each do |block|
-        key = block.name
+        key = block.content_type.name
         unless h.key?(key)
           h[key] = []
         end
