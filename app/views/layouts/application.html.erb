@@ -17,9 +17,22 @@
     gtag('config', '<%= Setting.google_analytics_tracker %>');
   </script>
   <% end %>
+
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= include_gon(:camel_case => true, :camel_depth => :recursive) %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+  <script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.4.1.min.js'></script>
+  <%= javascript_include_tag 'cabin', media: 'all' %>
+
+  <!-- google fonts-->
+  <link
+    href="//fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext"
+    rel="stylesheet" type="text/css">
+  <link
+    href="//fonts.googleapis.com/css?family=Open+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CRaleway:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CLora:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CRaleway:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CLora:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%26subset%3Dlatin%2Clatin-ext"
+    rel="stylesheet" type="text/css">
 </head>
 
 <body
@@ -599,21 +612,38 @@
 
           <div class="full_width">
             <div class="full_width_inner" style="padding-top:0px !important">
-              <h1>Deep Mountain</h1>
-              <% if notice%>
-              <div class="alert alert-warning text-center" role="alert"><%= notice %></div>
-              <% end%>
-              <% if alert%>
-              <div class="alert alert-primary text-center" role="alert"><%= alert %></div>
-              <% end%>
+              <div class="vc_row wpb_row section vc_row-fluid grid_section"
+                style=" padding-top:87px; padding-bottom:52px; text-align:center;">
+                <div class=" section_inner clearfix">
+                  <div class="section_inner_margin clearfix">
+                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                      <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                          <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                              <h1>Deep Mountain</h1>
+                            </div>
+                            <% if notice%>
+                            <div class="alert alert-warning text-center" role="alert"><%= notice %></div>
+                            <% end%>
+                            <% if alert%>
+                            <div class="alert alert-primary text-center" role="alert"><%= alert %></div>
+                            <% end%>
 
-              <%= yield %>
+                            <%= yield %>
 
-              <% if current_user&.is_admin? %>
-              <footer class="text-center">
-                <a href="/admin">Admin Site</a>
-              </footer>
-              <% end %>
+                            <% if current_user&.is_admin? %>
+                            <footer class="text-center">
+                              <a href="/admin">Admin Site</a>
+                            </footer>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -638,11 +668,14 @@
 
                           <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                              <h5 style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                              <h5 style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit,
                                 sed
-                                diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+                                diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                volutpat. Ut
                                 wisi
-                                enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</h5>
+                                enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                lobortis nisl</h5>
 
                             </div>
                           </div>
@@ -663,7 +696,8 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:58px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:58px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -682,7 +716,8 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:58px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:58px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -701,7 +736,8 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:58px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:58px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -731,7 +767,8 @@
                                 <h4 class="icon_title " style="">GRAPHIC DESIGN</h4>
                               </div>
                               <div class="icon_text_inner" style="">
-                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                                  diam nonummy
                                   nibh
                                   euismod tincidunt ut laoreet dolore magna</p>
                               </div>
@@ -756,7 +793,8 @@
                                 <h4 class="icon_title " style="">BRANDING</h4>
                               </div>
                               <div class="icon_text_inner" style="">
-                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                                  diam nonummy
                                   nibh
                                   euismod tincidunt ut laoreet dolore magna</p>
                               </div>
@@ -781,7 +819,8 @@
                                 <h4 class="icon_title " style="">MARKETING</h4>
                               </div>
                               <div class="icon_text_inner" style="">
-                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                                  diam nonummy
                                   nibh
                                   euismod tincidunt ut laoreet dolore magna</p>
                               </div>
@@ -813,7 +852,8 @@
                                 <h4 class="icon_title " style="">SOCIAL MEDIA</h4>
                               </div>
                               <div class="icon_text_inner" style="">
-                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                                  diam nonummy
                                   nibh
                                   euismod tincidunt ut laoreet dolore magna</p>
                               </div>
@@ -838,7 +878,8 @@
                                 <h4 class="icon_title " style="">ADVERTISING</h4>
                               </div>
                               <div class="icon_text_inner" style="">
-                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                                  diam nonummy
                                   nibh
                                   euismod tincidunt ut laoreet dolore magna</p>
                               </div>
@@ -863,7 +904,8 @@
                                 <h4 class="icon_title " style="">COPYWRITING</h4>
                               </div>
                               <div class="icon_text_inner" style="">
-                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                                <p style="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                                  diam nonummy
                                   nibh
                                   euismod tincidunt ut laoreet dolore magna</p>
                               </div>
@@ -890,17 +932,20 @@
                                 <div class="wpb_wrapper">
                                   <div class="q_counter_holder  center" style="opacity: 1;"><span
                                       class="counter  zero executed" style="">218</span></div>
-                                  <div class="separator  transparent center  " style="margin-top:-30px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:-30px">
+                                  </div>
 
                                   <div class="wpb_text_column wpb_content_element ">
                                     <div class="wpb_wrapper">
-                                      <h6 style="text-align: center;"><span style="color: #ffffff;">Cups of
+                                      <h6 style="text-align: center;"><span style="color: #ffffff;">Cups
+                                          of
                                           Coffee</span>
                                       </h6>
 
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:20px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:20px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -909,7 +954,8 @@
                                 <div class="wpb_wrapper">
                                   <div class="q_counter_holder  center" style="opacity: 1;"><span
                                       class="counter  zero executed" style="">25</span></div>
-                                  <div class="separator  transparent center  " style="margin-top:-30px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:-30px">
+                                  </div>
 
                                   <div class="wpb_text_column wpb_content_element ">
                                     <div class="wpb_wrapper">
@@ -919,7 +965,8 @@
 
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:20px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:20px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -928,7 +975,8 @@
                                 <div class="wpb_wrapper">
                                   <div class="q_counter_holder  center" style="opacity: 1;"><span
                                       class="counter  zero executed" style="">182</span></div>
-                                  <div class="separator  transparent center  " style="margin-top:-30px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:-30px">
+                                  </div>
 
                                   <div class="wpb_text_column wpb_content_element ">
                                     <div class="wpb_wrapper">
@@ -938,7 +986,8 @@
 
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:20px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:20px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -947,16 +996,19 @@
                                 <div class="wpb_wrapper">
                                   <div class="q_counter_holder  center" style="opacity: 1;"><span
                                       class="counter  zero executed" style="">12</span></div>
-                                  <div class="separator  transparent center  " style="margin-top:-30px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:-30px">
+                                  </div>
 
                                   <div class="wpb_text_column wpb_content_element ">
                                     <div class="wpb_wrapper">
-                                      <h6 style="text-align: center;"><span style="color: #ffffff;">Awards Won</span>
+                                      <h6 style="text-align: center;"><span style="color: #ffffff;">Awards
+                                          Won</span>
                                       </h6>
 
                                     </div>
                                   </div>
-                                  <div class="separator  transparent center  " style="margin-top:20px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:20px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -985,7 +1037,8 @@
 
                           <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                nonummy nibh euismod
                                 tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 
                             </div>
@@ -994,12 +1047,16 @@
 
                           <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                              <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+                              <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                suscipit lobortis
                                 nisl
-                                ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-                                vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+                                ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+                                hendrerit in
+                                vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+                                facilisis at
                                 vero
-                                eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+                                eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                                zzril delenit
                                 augue
                                 duis dolore te feugait nulla facilisi. Nam liber tempor</p>
 
@@ -1029,7 +1086,8 @@
                                     style="border-top-color:#4b4747;"></span></span></span></h4>
                             <div class="progress_content_outer" style="height: 24px;background-color: #f6f6f6;">
                               <div data-percentage="35" class="progress_content"
-                                style="height: 24px; background-color: rgb(191, 169, 125); width: 35%;"></div>
+                                style="height: 24px; background-color: rgb(191, 169, 125); width: 35%;">
+                              </div>
                             </div>
                           </div>
                           <div class="q_progress_bar">
@@ -1042,7 +1100,8 @@
                                     style="border-top-color:#4b4747;"></span></span></span></h4>
                             <div class="progress_content_outer" style="height: 24px;background-color: #f6f6f6;">
                               <div data-percentage="60" class="progress_content"
-                                style="height: 24px; background-color: rgb(191, 169, 125); width: 60%;"></div>
+                                style="height: 24px; background-color: rgb(191, 169, 125); width: 60%;">
+                              </div>
                             </div>
                           </div>
                           <div class="q_progress_bar">
@@ -1055,7 +1114,8 @@
                                     style="border-top-color:#4b4747;"></span></span></span></h4>
                             <div class="progress_content_outer" style="height: 24px;background-color: #f6f6f6;">
                               <div data-percentage="95" class="progress_content"
-                                style="height: 24px; background-color: rgb(191, 169, 125); width: 95%;"></div>
+                                style="height: 24px; background-color: rgb(191, 169, 125); width: 95%;">
+                              </div>
                             </div>
                           </div>
                           <div class="separator  transparent center  " style="margin-top:76px"></div>
@@ -1124,7 +1184,8 @@
                                     <div class="text_holder_inner">
                                       <h4 class="portfolio_title"><a
                                           href="https://demo.select-themes.com/cabin2/portfolio_page/stv-music-awards-2013/">STV
-                                          Music Awards 2013</a></h4><span class="project_category">Business /
+                                          Music Awards 2013</a></h4><span class="project_category">Business
+                                        /
                                         Fashion</span>
                                     </div>
                                   </div>
@@ -1169,7 +1230,8 @@
                                     <div class="text_holder_inner">
                                       <h4 class="portfolio_title"><a
                                           href="https://demo.select-themes.com/cabin2/portfolio_page/smash-pop-art-storm/">Smash
-                                          Pop Art Storm</a></h4><span class="project_category">Art / Fashion</span>
+                                          Pop Art Storm</a></h4><span class="project_category">Art /
+                                        Fashion</span>
                                     </div>
                                   </div>
                                 </div><a class="portfolio_link_class"
@@ -1277,11 +1339,14 @@
 
                           <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                              <h5 style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                              <h5 style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit,
                                 sed
-                                diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+                                diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                volutpat. Ut
                                 wisi
-                                enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</h5>
+                                enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                lobortis nisl</h5>
 
                             </div>
                           </div>
@@ -1323,7 +1388,8 @@
                                       href="https://www.linkedin.com/" target="_blank" style=""><span aria-hidden="true"
                                         class="qode_icon_font_elegant social_linkedin "
                                         style="line-height:23px;font-size: 12px; "></span></a></span>
-                                  <div class="separator  transparent center  " style="margin-top:70px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:70px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1340,7 +1406,8 @@
                                       <div class="q_team_info">
                                         <div class="q_team_title_holder circle_social">
                                           <h4 class="q_team_name">David Dennant</h4>
-                                          <h6 class="q_team_position" style="color: #888888">Creative Director</h6>
+                                          <h6 class="q_team_position" style="color: #888888">Creative
+                                            Director</h6>
                                         </div>
                                       </div>
                                     </div>
@@ -1363,7 +1430,8 @@
                                       href="https://www.linkedin.com/" target="_blank" style=""><span aria-hidden="true"
                                         class="qode_icon_font_elegant social_linkedin "
                                         style="line-height:23px;font-size: 12px; "></span></a></span>
-                                  <div class="separator  transparent center  " style="margin-top:70px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:70px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1403,7 +1471,8 @@
                                       href="https://www.linkedin.com/" target="_blank" style=""><span aria-hidden="true"
                                         class="qode_icon_font_elegant social_linkedin "
                                         style="line-height:23px;font-size: 12px; "></span></a></span>
-                                  <div class="separator  transparent center  " style="margin-top:70px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:70px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1420,7 +1489,8 @@
                                       <div class="q_team_info">
                                         <div class="q_team_title_holder circle_social">
                                           <h4 class="q_team_name">Ryan Rosling</h4>
-                                          <h6 class="q_team_position" style="color: #888888">Accountant</h6>
+                                          <h6 class="q_team_position" style="color: #888888">Accountant
+                                          </h6>
                                         </div>
                                       </div>
                                     </div>
@@ -1443,7 +1513,8 @@
                                       href="https://www.linkedin.com/" target="_blank" style=""><span aria-hidden="true"
                                         class="qode_icon_font_elegant social_linkedin "
                                         style="line-height:23px;font-size: 12px; "></span></a></span>
-                                  <div class="separator  transparent center  " style="margin-top:70px"></div>
+                                  <div class="separator  transparent center  " style="margin-top:70px">
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1482,10 +1553,13 @@
                                     <div class="testimonial_text_holder center_align">
                                       <div class="testimonial_text_inner">
                                         <p class="testimonial_title" style=""></p>
-                                        <p class="testimonial_text">At vero eos et accusamus et iusto odio dignissimos
-                                          ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos
+                                        <p class="testimonial_text">At vero eos et accusamus et iusto odio
+                                          dignissimos
+                                          ducimus qui blanditiis praesentium voluptatum deleniti atque
+                                          corrupti quos
                                           dolores
-                                          et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                                          et quas molestias excepturi sint occaecati cupiditate non
+                                          provident, similique
                                           sunt in culpa qui officia deserunt mollitia animi</p>
                                         <p class="testimonial_author" style="">- Another Client</p>
                                       </div>
@@ -1498,10 +1572,13 @@
                                     <div class="testimonial_text_holder center_align">
                                       <div class="testimonial_text_inner">
                                         <p class="testimonial_title" style=""></p>
-                                        <p class="testimonial_text">Sed ut perspiciatis unde omnis iste natus error sit
-                                          voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                                        <p class="testimonial_text">Sed ut perspiciatis unde omnis iste
+                                          natus error sit
+                                          voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                                          eaque ipsa
                                           quae
-                                          ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                                          ab illo inventore veritatis et quasi architecto beatae vitae
+                                          dicta sunt
                                           explicabo.
                                           Nemo enim ipsam voluptatem</p>
                                         <p class="testimonial_author" style="">- Client</p>
@@ -1515,10 +1592,13 @@
                                     <div class="testimonial_text_holder center_align">
                                       <div class="testimonial_text_inner">
                                         <p class="testimonial_title" style=""></p>
-                                        <p class="testimonial_text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        <p class="testimonial_text">Lorem ipsum dolor sit amet,
+                                          consectetur adipiscing
                                           elit,
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna
+                                          aliqua. Ut enim ad
+                                          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                          aliquip ex ea
                                           commodo consequat.</p>
                                         <p class="testimonial_author" style="">- A Satisfied Client</p>
                                       </div>
@@ -1551,11 +1631,14 @@
 
                           <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                              <h5 style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                              <h5 style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit,
                                 sed
-                                diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+                                diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                volutpat. Ut
                                 wisi
-                                enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</h5>
+                                enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                lobortis nisl</h5>
 
                             </div>
                           </div>
@@ -1714,7 +1797,8 @@
                       <div class="column_inner">
                         <div id="text-2" class="widget widget_text">
                           <div class="textwidget">
-                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px"></div>
+                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px">
+                            </div>
 
 
                             <a href="https://demo.select-themes.com/cabin2">
@@ -1727,10 +1811,12 @@
                             </div>
 
 
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                            nibh euismod
                             tincidunt
 
-                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px"></div>
+                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px">
+                            </div>
 
                           </div>
                         </div>
@@ -1740,7 +1826,8 @@
                       <div class="column_inner">
                         <div id="text-5" class="widget widget_text">
                           <div class="textwidget">
-                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px"></div>
+                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px">
+                            </div>
                           </div>
                         </div>
                         <div id="nav_menu-2" class="widget widget_nav_menu">
@@ -1748,18 +1835,22 @@
                           <div class="menu-custom_menu_1-container">
                             <ul id="menu-custom_menu_1" class="menu">
                               <li id="menu-item-327"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a
-                                  href="https://demo.select-themes.com/cabin2/about-us/">Who We Are</a></li>
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327">
+                                <a href="https://demo.select-themes.com/cabin2/about-us/">Who We Are</a>
+                              </li>
                               <li id="menu-item-328"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a
-                                  href="https://demo.select-themes.com/cabin2/team/">Our Professional Team</a></li>
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328">
+                                <a href="https://demo.select-themes.com/cabin2/team/">Our Professional
+                                  Team</a></li>
                               <li id="menu-item-329"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"><a
-                                  href="https://demo.select-themes.com/cabin2/about-me/">Skills &amp; Experiences</a>
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329">
+                                <a href="https://demo.select-themes.com/cabin2/about-me/">Skills &amp;
+                                  Experiences</a>
                               </li>
                               <li id="menu-item-330"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330"><a
-                                  href="https://demo.select-themes.com/cabin2/process-services/">Process &amp;
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330">
+                                <a href="https://demo.select-themes.com/cabin2/process-services/">Process
+                                  &amp;
                                   Services</a>
                               </li>
                             </ul>
@@ -1771,7 +1862,8 @@
                       <div class="column_inner">
                         <div id="text-6" class="widget widget_text">
                           <div class="textwidget">
-                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px"></div>
+                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px">
+                            </div>
                           </div>
                         </div>
                         <div id="nav_menu-3" class="widget widget_nav_menu">
@@ -1779,19 +1871,20 @@
                           <div class="menu-custom_menu_2-container">
                             <ul id="menu-custom_menu_2" class="menu">
                               <li id="menu-item-50346"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50346"><a
-                                  href="https://demo.select-themes.com/cabin2/portugal-2013-road-trip-gallery/">Portugal
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50346">
+                                <a href="https://demo.select-themes.com/cabin2/portugal-2013-road-trip-gallery/">Portugal
                                   2013 Road-trip</a></li>
                               <li id="menu-item-50347"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50347"><a
-                                  href="https://demo.select-themes.com/cabin2/madrids-photographer-marathon/">Madrid’s
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50347">
+                                <a href="https://demo.select-themes.com/cabin2/madrids-photographer-marathon/">Madrid’s
                                   Marathon</a></li>
                               <li id="menu-item-50348"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50348"><a
-                                  href="https://demo.select-themes.com/cabin2/recent-trends-in-storytelling/">Recent
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50348">
+                                <a href="https://demo.select-themes.com/cabin2/recent-trends-in-storytelling/">Recent
                                   Trends</a></li>
                               <li id="menu-item-50349"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50349"><a
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50349">
+                                <a
                                   href="https://demo.select-themes.com/cabin2/supernatural-fx-showreel/">Supernatural</a>
                               </li>
                             </ul>
@@ -1803,7 +1896,8 @@
                       <div class="column_inner">
                         <div id="text-7" class="widget widget_text">
                           <div class="textwidget">
-                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px"></div>
+                            <div class="separator  transparent center  " style="margin-top:9px;margin-bottom:0px">
+                            </div>
                           </div>
                         </div>
                         <div id="nav_menu-4" class="widget widget_nav_menu">
@@ -1811,21 +1905,21 @@
                           <div class="menu-custom_menu_3-container">
                             <ul id="menu-custom_menu_3" class="menu">
                               <li id="menu-item-50350"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50350"><a
-                                  href="https://demo.select-themes.com/cabin2/portfolio_page/stv-music-awards-2013/">Music
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50350">
+                                <a href="https://demo.select-themes.com/cabin2/portfolio_page/stv-music-awards-2013/">Music
                                   Awards 2013</a></li>
                               <li id="menu-item-50351"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50351"><a
-                                  href="https://demo.select-themes.com/cabin2/portfolio_page/festival-2014/">Festival
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50351">
+                                <a href="https://demo.select-themes.com/cabin2/portfolio_page/festival-2014/">Festival
                                   2014</a></li>
                               <li id="menu-item-50352"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50352"><a
-                                  href="https://demo.select-themes.com/cabin2/portfolio_page/art-design-blvd/">Art
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50352">
+                                <a href="https://demo.select-themes.com/cabin2/portfolio_page/art-design-blvd/">Art
                                   Design
                                   BLVD</a></li>
                               <li id="menu-item-50353"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50353"><a
-                                  href="https://demo.select-themes.com/cabin2/portfolio_page/stockholm-fashion/">Stockholm
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50353">
+                                <a href="https://demo.select-themes.com/cabin2/portfolio_page/stockholm-fashion/">Stockholm
                                   Fashion</a></li>
                             </ul>
                           </div>
@@ -1845,7 +1939,8 @@
 
                   <div class="column_inner">
                     <div class="textwidget"><a href="https://qodeinteractive.com/theme-author/select-wordpress-themes"
-                        rel="nofollow noopener noreferrer" target="_blank">© Copyright Select Themes</a></div>
+                        rel="nofollow noopener noreferrer" target="_blank">© Copyright Select Themes</a>
+                    </div>
                   </div>
                 </div>
               </div>
