@@ -1,24 +1,25 @@
 ActiveAdmin.register ContentBlock do
-  permit_params :page_id, :content_type_id, :name, :title, :date, :content, images: []
-  config.sort_order = "LOWER(page), LOWER(content_type), date, LOWER(name), LOWER(title)"
+  permit_params :page_id, :content_type_id, :title, :date, :content, images: []
+  config.sort_order = "LOWER(page), LOWER(content_type), date, LOWER(title)"
+
+  # search filters on index page
+  preserve_default_filters!
+  remove_filter :versions, :rich_text_content, :images_attachments, :images_blobs
 
   index do
     selectable_column
 
     column :id
     column :page
-    column :content_type
-    column :name
+    column :type do |b| b.content_type end
     column :date
     column :title
     column :images do |block|
-      if image = block.images.first
-        if block.images.size > 1
-          block.images.each do |image|
-            span image_tag(image.representation(resize_to_limit: [50, 50]), alt: block.name)    
-          end
-        else
-          span image_tag(image.representation(resize_to_limit: [100, 100]), alt: block.name)  
+      if block.images.size == 1
+        image_tag(block.images.first.representation(resize_to_limit: [100, 100]), alt: block.title)  
+      else
+        block.images.map do |image|
+          image_tag(image.representation(resize_to_limit: [50, 50]), alt: block.title)
         end
       end
     end
@@ -34,13 +35,12 @@ ActiveAdmin.register ContentBlock do
   show do |content_block|
     attributes_table do
       row :page
-      row :name
       row :content_type
       row :date
       row :title
       row :images do |block|
         block.images.map do |image|
-          image_tag(image.representation(resize_to_limit: [100, 100]), alt: block.name)
+          image_tag(image.representation(resize_to_limit: [100, 100]), alt: block.title)
         end
       end
       row :created_at
