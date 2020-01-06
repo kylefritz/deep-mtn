@@ -3,7 +3,7 @@
 
 <%= content(:yo) %>
 
-<% list(:Day).each do|s| %>
+<% list(:History).each do|s| %>
   <h1><%= s.title %></h1>
-  <%= s.content %>
+  <p><%= s.content %></p>
 <% end %>

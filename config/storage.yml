@@ -6,6 +6,12 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
+  # service: S3
+  # access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  # secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  # region: us-east-1
+  # bucket: deepmtn
+
 # set CORS on s3 bucket if using actiontext (which does s3 direct-upload)
 # https://guides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration
 # https://mikerogers.io/2018/11/03/configuring-cors-on-s3-for-activestorage.html
