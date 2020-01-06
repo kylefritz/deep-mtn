@@ -15,7 +15,7 @@
     <% @content_blocks.each do |content_block| %>
       <tr>
         <td><%= content_block.page %></td>
-        <td><%= content_block.name %></td>
+        <td><%= content_block.title %></td>
         <td><%= link_to 'Show', content_block %></td>
         <td><%= link_to 'Edit', edit_content_block_path(content_block) %></td>
         <td><%= link_to 'Destroy', content_block, method: :delete, data: { confirm: 'Are you sure?' } %></td>
