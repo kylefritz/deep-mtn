@@ -1,0 +1,31 @@
+// https://demo.select-themes.com/cabin2/
+
+// https://demo.select-themes.com/cabin2/wp-includes/css/dist/block-library/style.min.css
+// https://demo.select-themes.com/cabin2/wp-content/plugins/LayerSlider/static/css/layerslider.css
+// https://demo.select-themes.com/cabin2/wp-content/plugins/contact-form-7/includes/css/styles.css
+// https://toolbar.qodeinteractive.com/_toolbar/assets/css/rbt-modules.css
+
+@import "cabin-theme/style.css";
+@import "cabin-theme/css/stylesheet.min.css";
+@import "cabin-theme/css/blog.min.css";
+@import "cabin-theme/css/woocommerce.min.css";
+@import "cabin-theme/css/woocommerce_responsive.min.css";
+
+@import "cabin-theme/css/style_dynamic.php.v5.2.2.scss"; // @import 'cabin-theme/css/style_dynamic.php?ver=5.2.2';
+@import "cabin-theme/css/font-awesome/css/font-awesome.min.css";
+@import "cabin-theme/css/elegant-icons/style.min.css";
+@import "cabin-theme/css/ion-icons/css/ionicons.min.css";
+@import "cabin-theme/css/linea-icons/style.css";
+@import "cabin-theme/css/responsive.min.css";
+@import "cabin-theme/css/style_dynamic_responsive.php.v5.2.2.scss"; // @import 'cabin-theme/css/style_dynamic_responsive.php';
+
+// https://demo.select-themes.com/cabin2/demo-files-cabin/landing/css/jquery.fancybox.css
+// https://demo.select-themes.com/cabin2/demo-files-cabin/landing/css/landing_stylesheet.css
+@import "cabin-theme/js_composer.css"; // https://demo.select-themes.com/cabin2/wp-content/plugins/js_composer/assets/css/js_composer.min.css
+
+// @import 'cabin-theme/css/custom_css.php?ver=5.2.2'
+.content .full_width {
+  position: relative;
+}
+
+@import "cabin-theme/css/webkit_stylesheet.css";

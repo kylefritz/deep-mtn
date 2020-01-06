@@ -1,60 +1,8 @@
 @import "trix/dist/trix";
 @import "actiontext";
-@import "scaffolds";
+// @import "scaffolds";
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+// @import "bootstrap";
 
-@import url("https://fonts.googleapis.com/css?family=Oswald:regular,bold&subset=latin,latin-ext");
-@import url("https://fonts.googleapis.com/css?family=EB+Garamond:regular&subset=latin,latin-ext");
-body {
-  background-color: rgb(233, 242, 236);
-}
-.banner {
-  // background-image: image-url("background-bread.jpg");
-  background-size: cover;
-  background-position: center;
-  color: rgba(255, 255, 255, 1);
-  height: 278px;
-}
-.container {
-  margin-top: -100px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-  background: white;
-  border-top: 10px solid #507a4e;
-  $padding-left-right: 34px + 15px;
-  padding-left: $padding-left-right;
-  padding-right: $padding-left-right;
-  padding-bottom: $padding-left-right + 15px;
-  margin-bottom: 100px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Oswald", sans-serif;
-  color: rgb(50, 42, 25);
-  text-transform: uppercase;
-}
-h1,
-h2 {
-  text-align: center;
-}
-
-@media only screen and (min-width: 1025px) {
-  .wrapper {
-    max-width: 900px;
-    margin: auto;
-  }
-}
-
-// for ErrorBoundary
-.stack-trace {
-  white-space: pre;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  font-size: 0.7em;
-  background: white;
-}
+@import "cabin";
