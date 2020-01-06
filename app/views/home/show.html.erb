@@ -1,9 +1,36 @@
-<div id="react"></div>
+<h2>History</h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</p>
+
+<div class="row my-5">
+  <% list(:History)[10..11].each do|block| %>
+    <% block.images.each do |image| %>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag(image.representation(resize_to_limit: [500, 500]), alt: block.title, class: 'img-fluid', style: "object-fit:contain") %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row py-5 darker-background">
+  <% list(:History)[12..20].each do|block| %>
+
+    <div class="col-4 px-5 my-4">
+      <h3><%= block.title %></h3>
+      <%= block.content %>
+    </div>
+
+  <% end %>
+</div>
+
+<div id="react" class="py-5"></div>
 <%= javascript_pack_tag 'camp' %>
 
-<%= content(:yo) %>
+<div class="row py-5 darker-background">
+  <div class="col">
+    <h2>mmmmmmm</h2>
+    <div><%= content(:yo) %></div>
+  </div>
+</div>
 
-<% list(:Day).each do|s| %>
-  <h1><%= s.title %></h1>
-  <%= s.content %>
-<% end %>
