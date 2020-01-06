@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.5"
+ruby "2.7.0"
 
 #
 # please keep gems sorted; include comment for why a gem is needed
@@ -26,7 +26,7 @@ gem "paper_trail" # audits
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", ">= 3.12.2" # web/app server
 gem "rails-settings-cached" # site-wide settings
-gem "rails", "~> 6.0.0"
+gem "rails", "~> 6.0.2" # might want to make sure this matches package.json @rails versions
 gem "redcarpet" # markdown the baker's note in admin
 gem "sass-rails", "~> 5" # css
 gem "sentry-raven" # debugging to sentry.io
