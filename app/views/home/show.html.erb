@@ -2,10 +2,10 @@
 <div class="parallax" style="background-image:url(<%= Rails.application.routes.url_helpers.rails_blob_path(block(:Parallax).images.first, only_path: true)%>)">
   <h1><%= block(:Parallax).title %></h1>
 </div>
+<div class="after-parallax" />
 <% end %>
 
-
-<h2 style="margin-top: 320px">Events</h2>
+<h2>Events</h2>
 
 <div class="row my-5 events">
   <% list(:Event).each do|block| %>
