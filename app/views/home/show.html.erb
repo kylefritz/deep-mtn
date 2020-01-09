@@ -1,3 +1,27 @@
+<% if block(:Parallax)&.images&.first %>
+<div class="parallax" style="background-image:url(<%= Rails.application.routes.url_helpers.rails_blob_path(block(:Parallax).images.first, only_path: true)%>)">
+  <h1><%= block(:Parallax).title %></h1>
+</div>
+<% end %>
+
+
+<h2 style="margin-top: 320px">Events</h2>
+
+<div class="row my-5 events">
+  <% list(:Event).each do|block| %>
+    <% block.images.each do |image| %>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag(image.representation(resize_to_limit: [500, 500]), alt: block.title, class: 'img-fluid', style: "object-fit:contain") %>
+      </div>
+      <%= block.content %>
+
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+
 <h2>History</h2>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</p>
 

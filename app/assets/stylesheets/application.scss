@@ -19,7 +19,6 @@ $contrast-color: #8c8c8c;
 // top
 //
 #top-nav {
-  background-color: rgb(48, 34, 34);
   li.nav-item.py-3 {
     font-size: 15px;
     font-style: normal;
@@ -79,4 +78,40 @@ footer {
   overflow-y: hidden;
   font-size: 0.7em;
   background: white;
+}
+
+//
+//
+//
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  h1 {
+    margin-top: 156px;
+    color: white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid;
+    max-width: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4rem;
+  }
+}
+
+.events {
+  .trix-content {
+    :nth-child(1),
+    :nth-child(2) {
+      font-weight: bold;
+    }
+  }
 }
