@@ -10,10 +10,8 @@
 <div class="row my-5 events">
   <% list(:Event).each do|block| %>
     <% block.images.each do |image| %>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <%= image_tag(image.representation(resize_to_limit: [500, 500]), alt: block.title, class: 'img-fluid', style: "object-fit:contain") %>
-      </div>
+    <div class="col">      
+      <%= image_tag(image.representation(resize_to_limit: [500, 500]), alt: block.title, class: 'img-fluid', style: "object-fit:contain") %>
       <%= block.content %>
 
     </div>
@@ -29,9 +27,7 @@
   <% list(:History)[10..11].each do|block| %>
     <% block.images.each do |image| %>
     <div class="col">
-      <div class="card" style="width: 18rem;">
-        <%= image_tag(image.representation(resize_to_limit: [500, 500]), alt: block.title, class: 'img-fluid', style: "object-fit:contain") %>
-      </div>
+      <%= image_tag(image.representation(resize_to_limit: [500, 500]), alt: block.title, class: 'img-fluid', style: "object-fit:contain") %>
     </div>
     <% end %>
   <% end %>
