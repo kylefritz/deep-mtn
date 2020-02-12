@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import _ from "lodash";
 
-export default function q2() {
+export default function Q2() {
   const [numGuests, setNumGuests] = useState(0);
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
@@ -35,7 +35,7 @@ export default function q2() {
           Add guest
         </a>
 
-        <button type="submit" className="btn mx-3 btn-primary" >
+        <button type="submit" className="btn m-3 btn-primary" >
           Save
         </button>
       </form>

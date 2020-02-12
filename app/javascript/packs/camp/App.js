@@ -5,16 +5,14 @@ import queryString from 'query-string'
 import { useForm } from 'react-hook-form'
 import _ from 'lodash'
 
-import Question1 from './q1_you_coming';
-import Question2 from "./q2_how_many";
+import Q1 from './q1_you_coming';
+import Q2 from "./q2_how_many";
+import Q3 from "./q3_events";
 
 export default function ShouldICamp() {
-  const [question, setQuestion] = useState(2); // TODO: set to 1
+  const [question, setQuestion] = useState(3); // TODO: set to 1
 
-  switch (question) {
-    case 1:
-      return <Question1 onDone={()=> setQuestion(2)} />;
-    case 2:
-      return <Question2 onDone={() => setQuestion(3)} />;
-  }
+  return _.chain([Q1, Q2, Q3]).map((Q, i) => 
+    (i + 1) == question && <Q onDone={() => setQuestion((i + 2))} />
+  ).compact().first().value();
 }

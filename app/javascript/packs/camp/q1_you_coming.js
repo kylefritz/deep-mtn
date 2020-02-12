@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import _ from "lodash";
 
-export default function q1({onDone}) {
+export default function Q1({onDone}) {
   const [rsvp, setRsvp] = useState(null);
 
   const handleRsvp = (coming) => {
@@ -33,14 +33,14 @@ export function Question({ onRsvp: handleRsvp }) {
              <h2>Are you coming?!</h2>
              <button
                type="button"
-               className="btn mx-3 btn-primary"
+               className="btn m-3 btn-primary"
                onClick={() => handleRsvp(true)}
              >
                YES
              </button>
              <button
                type="button"
-               className="btn mx-3 btn-light"
+               className="btn m-3 btn-light"
                onClick={() => handleRsvp(false)}
              >
                NO
