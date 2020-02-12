@@ -28,11 +28,11 @@ export default class ErrorBoundary extends React.Component {
       // render fallback UI
       return (
         <>
-          <h2>There was an error in this software :(</h2>
+          <h2>There was an error in this wedding software :(</h2>
           <div className="mt-3">
             <button onClick={() => Sentry.showReportDialog({ eventId })}
               className="btn-primary btn-lg btn-block" type="button">
-              Please tell us what happened!
+              Kyle made it; it's his fault. Please tell him what happened!
             </button>
           </div>
           <p className="text-center">Then maybe try again or try back later?</p>

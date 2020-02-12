@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: "home#show"
+  resource :rsvp
 
   # sign in
   get "/auth" => redirect("/users/sign_in")

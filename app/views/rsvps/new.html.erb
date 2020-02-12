@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>RSVP for Deep Wedding</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <% if Setting.google_analytics_tracker.present? %>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Setting.google_analytics_tracker %>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '<%= Setting.google_analytics_tracker %>');
+  </script>
+  <% end %>
+
+  <%= stylesheet_link_tag 'rsvp', media: 'all'%>
+  <%= include_gon(:camel_case => true, :camel_depth => :recursive) %>
+</head>
+
+<body class="container-fluid">
+  <%= javascript_pack_tag 'camp' %>
+  <div id="react" />
+
+</body>
+</html>
