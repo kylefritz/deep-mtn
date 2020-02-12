@@ -18,15 +18,17 @@ gem "devise" # for authentication
 gem "gon" # rails variables in javascript
 gem "hashid-rails" # lookup models by hashid
 gem "image_processing", "~> 1.2" # Use Active Storage variant
+gem "inky-rb", require: "inky" # converts template into complex, responsive email-ready HTML
 gem "jbuilder", "~> 2.7" # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "naturalsort", require: "natural_sort_kernel" # implements a natural, human-friendly alphanumeric sort
 gem "newrelic_rpm" # debugging to new relic
 gem "olive_branch" # convert snake_case to camelCase for json
 gem "paper_trail" # audits
 gem "pg", ">= 0.18", "< 2.0"
+gem "premailer-rails" # Stylesheet inlining for email
 gem "puma", ">= 3.12.2" # web/app server
 gem "rails-settings-cached" # site-wide settings
-gem "rails", "~> 6" # version should match @rails packages in package.json 
+gem "rails", "~> 6" # version should match @rails packages in package.json
 gem "redcarpet" # markdown the baker's note in admin
 gem "sass-rails", "~> 5" # css
 gem "sentry-raven" # debugging to sentry.io

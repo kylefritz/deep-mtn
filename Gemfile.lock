@@ -128,6 +128,8 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    css_parser (1.7.1)
+      addressable
     device_detector (1.0.3)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -151,6 +153,7 @@ GEM
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    foundation_emails (2.2.1.0)
     geocoder (1.5.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -166,6 +169,7 @@ GEM
       activerecord (>= 4.0)
       hashids (~> 1.0)
     hashids (1.0.5)
+    htmlentities (4.3.4)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.10.0)
@@ -176,6 +180,9 @@ GEM
       has_scope (~> 0.6)
       railties (>= 5.0, < 6.1)
       responders (>= 2, < 4)
+    inky-rb (1.3.7.5)
+      foundation_emails (~> 2)
+      nokogiri
     jaro_winkler (1.5.4)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -248,6 +255,13 @@ GEM
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     popper_js (1.14.5)
+    premailer (1.11.1)
+      addressable
+      css_parser (>= 1.6.0)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.10.3)
+      actionmailer (>= 3)
+      premailer (~> 1.7, >= 1.7.9)
     public_suffix (4.0.2)
     puma (4.3.1)
       nio4r (~> 2.0)
@@ -425,6 +439,7 @@ DEPENDENCIES
   gon
   hashid-rails
   image_processing (~> 1.2)
+  inky-rb
   jbuilder (~> 2.7)
   json-schema
   letter_opener_web
@@ -434,6 +449,7 @@ DEPENDENCIES
   olive_branch
   paper_trail
   pg (>= 0.18, < 2.0)
+  premailer-rails
   puma (>= 3.12.2)
   rails (~> 6)
   rails-settings-cached
