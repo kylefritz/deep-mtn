@@ -42,50 +42,31 @@ function Event({ name, register, rsvp }) {
         </div>
 
         <div className="card-body">
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name={name}
-              id={`${key}-yes`}
-              value="yes"
-              ref={register}
-              defaultChecked={rsvp == "yes"}
-            />
-            <label className="form-check-label" htmlFor={`${key}-yes`}>
-              Yes!
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name={name}
-              id={`${key}-maybe`}
-              value="maybe"
-              ref={register}
-              defaultChecked={rsvp == "maybe"}
-            />
-            <label className="form-check-label" htmlFor={`${key}-maybe`}>
-              Maybe
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name={name}
-              id={`${key}-no`}
-              value="no"
-              ref={register}
-              defaultChecked={rsvp == "no"}
-            />
-            <label className="form-check-label" htmlFor={`${key}-no`}>
-              No
-            </label>
-          </div>
+          {["yes", "maybe", "no"].map(value => (
+            <Radio {...{ name, value, rsvp, register }} />
+          ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+function Radio({ name, value, rsvp, register }) {
+  const id = `${_.kebabCase(name)}-${value}`;
+  return (
+    <div className="form-check">
+      <input
+        className="form-check-input"
+        type="radio"
+        name={name}
+        id={id}
+        value={value}
+        ref={register}
+        defaultChecked={rsvp == value}
+      />
+      <label className="form-check-label" htmlFor={id}>
+        {`${_.capitalize(value)}${value == "yes" ? "!" : ""}`}
+      </label>
     </div>
   );
 }
