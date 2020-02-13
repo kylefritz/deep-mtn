@@ -2,26 +2,22 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import _ from "lodash";
 
-export default function Q3() {
-  const [numGuests, setNumGuests] = useState(0);
+export default function Q3({ onAnswer: handleAnswer }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     console.log(data);
+    handleAnswer(data);
   };
 
   const deleteLast = () => setNumGuests(numGuests - 1);
 
-  const events =[
-    "Welcome Paartay",
-    "Main Event",
-    "Farewell Brunch",
-  ]
+  const events = ["Welcome Paartay", "Main Event", "Farewell Brunch"];
 
   return (
     <>
       <h1>Which events will you attend?</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div class="row">
+        <div className="row">
           {events.map(name => (
             <Event key={name} name={name} />
           ))}
@@ -34,17 +30,18 @@ export default function Q3() {
     </>
   );
 }
+Q3.question = "What events are you coming to?";
 
-export function Event({ name }) {
-  const key = _.kebabCase(name)
+function Event({ name }) {
+  const key = _.kebabCase(name);
   return (
-    <div class="col">
-      <div class="card my-2">
-        <div class="card-header">
-          <h5 style={{whiteSpace: 'pre'}}>{name}</h5>
+    <div className="col">
+      <div className="card my-2">
+        <div className="card-header">
+          <h5 className="text-nowrap">{name}</h5>
         </div>
 
-        <div class="card-body">
+        <div className="card-body">
           <div className="form-check">
             <input
               className="form-check-input"

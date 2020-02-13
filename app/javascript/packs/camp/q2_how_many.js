@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import _ from "lodash";
 
-export default function Q2() {
+export default function Q2({ onAnswer: handleAnswer }) {
   const [numGuests, setNumGuests] = useState(0);
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     console.log(data);
+    handleAnswer(data);
   };
 
-  const deleteLast = () => setNumGuests(numGuests - 1)
+  const deleteLast = () => setNumGuests(numGuests - 1);
 
   return (
     <>
@@ -35,15 +36,16 @@ export default function Q2() {
           Add guest
         </a>
 
-        <button type="submit" className="btn m-3 btn-primary" >
-          Save
+        <button type="submit" className="btn m-3 btn-primary">
+          {numGuests == 0 ? "Just me!" : "Save guests"}
         </button>
       </form>
     </>
   );
 }
+Q2.question = "Who's in your party?";
 
-export function Guest({ index, onDelete, register }) {
+function Guest({ index, onDelete, register }) {
   return (
     <div className="form-group">
       {onDelete && (
@@ -67,10 +69,7 @@ export function Guest({ index, onDelete, register }) {
         ref={register}
         aria-describedby={`guest-${index}Help`}
       />
-      <small
-        id={`guest-${index}Help`}
-        className="form-text text-muted"
-      ></small>
+      <small id={`guest-${index}Help`} className="form-text text-muted"></small>
     </div>
   );
 }
