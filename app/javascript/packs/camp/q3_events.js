@@ -43,7 +43,7 @@ function Event({ name, register, rsvp }) {
 
         <div className="card-body">
           {["yes", "maybe", "no"].map(value => (
-            <Radio {...{ name, value, rsvp, register }} />
+            <Radio {...{key: value, name, value, rsvp, register }} />
           ))}
         </div>
       </div>
