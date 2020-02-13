@@ -5,9 +5,9 @@ import _ from "lodash";
 export default function Q2({ onAnswer: handleAnswer }) {
   const [numGuests, setNumGuests] = useState(0);
   const { register, handleSubmit } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-    handleAnswer(data);
+  const onSubmit = guestsDict => {
+    const guests = _.compact(Object.values(guestsDict));
+    handleAnswer(guests);
   };
 
   const deleteLast = () => setNumGuests(numGuests - 1);
@@ -43,7 +43,7 @@ export default function Q2({ onAnswer: handleAnswer }) {
     </>
   );
 }
-Q2.question = "Who's in your party?";
+Q2.question = "With who else?";
 
 function Guest({ index, onDelete, register }) {
   return (

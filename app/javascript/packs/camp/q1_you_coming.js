@@ -20,18 +20,12 @@ export default function Q1({ onAnswer: handleAnswer }) {
     return <Bummer />;
   }
 }
-Q1.question = "Are you coming?";
+Q1.question = "Are you coming?!";
 
 function Question({ onRsvp: handleRsvp }) {
   return (
     <>
-      <h1>Hello, Meghan!</h1>
-      <p>
-        We're so looking forward to hosting you for our wedding at Deep
-        Mountain.
-      </p>
-      <p>Let's start with an easy question...</p>
-      <h2>Are you coming?!</h2>
+      <h1>{Q1.question}</h1>
       <button
         type="button"
         className="btn m-3 btn-primary"

@@ -15,7 +15,7 @@ export default function Q3({ onAnswer: handleAnswer }) {
 
   return (
     <>
-      <h1>Which events will you attend?</h1>
+      <h1>What events are you coming to?</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           {events.map(name => (
@@ -30,7 +30,7 @@ export default function Q3({ onAnswer: handleAnswer }) {
     </>
   );
 }
-Q3.question = "What events are you coming to?";
+Q3.question = "Which events?";
 
 function Event({ name }) {
   const key = _.kebabCase(name);

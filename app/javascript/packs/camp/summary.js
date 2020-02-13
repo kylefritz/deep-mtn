@@ -7,35 +7,62 @@ export default function Summary({
 }) {
   return (
     <>
-      <h1>Here's what we got so far!</h1>
-      {questions.map(([klass, answer], i) => (
-        <Question
-          key={klass.question}
-          klass={klass}
-          answer={answer}
-          onChange={() => handleSetQuestion(i)}
-        />
-      ))}
+      <h1>Hello, Meghan!</h1>
+      <p>
+        We're so looking forward to hosting you for our wedding at Deep
+        Mountain.
+      </p>
+      <h3 className="mb-3">Here's what we got so far!</h3>
+      <div className="row">
+        {questions.map(([klass, answer], i) => (
+          <Question
+            key={klass.question}
+            klass={klass}
+            answer={answer}
+            onChange={() => handleSetQuestion(i)}
+          />
+        ))}
+      </div>
     </>
   );
 }
 
+function formatAnswer(answer)
+{
+  if(_.isArray(answer)){
+    if(answer.length == 0)
+    {
+      return "Just me"
+    }
+    return answer.join((', '))
+  }
+
+  return answer;
+}
+
 function Question({ klass, answer, onChange: handleChange }) {
   return (
-    <div className="row">
+    <>
       <div className="col">
         <strong>{klass.question}</strong>
       </div>
       <div className="col">
-        {answer || <a href="#" onClick={handleChange}>
-          let us know!
-        </a>}
+        {answer ? (
+          <>
+            {formatAnswer(answer)}
+            <small className="ml-3">
+              <a href="#" className="text-muted" onClick={handleChange}>
+                update
+              </a>
+            </small>
+          </>
+        ) : (
+          <a href="#" onClick={handleChange}>
+            let us know!
+          </a>
+        )}
       </div>
-      <div className="col">
-        {answer && <a href="#" onClick={handleChange}>
-          update
-        </a>}
-      </div>
-    </div>
+      <div class="w-100 mb-2"></div>
+    </>
   );
 }
