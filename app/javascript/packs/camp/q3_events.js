@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import _ from "lodash";
 
-export default function Q3({ onAnswer: handleAnswer }) {
+export default function Q3({ answer, onAnswer: handleAnswer }) {
+  const rsvps = answer || {};
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     handleAnswer(data);
@@ -18,7 +19,7 @@ export default function Q3({ onAnswer: handleAnswer }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           {events.map(name => (
-            <Event key={name} name={name} register={register} />
+            <Event key={name} name={name} register={register} rsvp={rsvps[name]} />
           ))}
         </div>
 
@@ -31,7 +32,7 @@ export default function Q3({ onAnswer: handleAnswer }) {
 }
 Q3.question = "Which events?";
 
-function Event({ name, register }) {
+function Event({ name, register, rsvp }) {
   const key = _.kebabCase(name);
   return (
     <div className="col">
@@ -49,6 +50,7 @@ function Event({ name, register }) {
               id={`${key}-yes`}
               value="yes"
               ref={register}
+              defaultChecked={rsvp == "yes"}
             />
             <label className="form-check-label" htmlFor={`${key}-yes`}>
               Yes!
@@ -62,6 +64,7 @@ function Event({ name, register }) {
               id={`${key}-maybe`}
               value="maybe"
               ref={register}
+              defaultChecked={rsvp == "maybe"}
             />
             <label className="form-check-label" htmlFor={`${key}-maybe`}>
               Maybe
@@ -75,6 +78,7 @@ function Event({ name, register }) {
               id={`${key}-no`}
               value="no"
               ref={register}
+              defaultChecked={rsvp == "no"}
             />
             <label className="form-check-label" htmlFor={`${key}-no`}>
               No

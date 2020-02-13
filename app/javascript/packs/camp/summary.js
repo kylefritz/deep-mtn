@@ -77,7 +77,7 @@ function Question({ klass, answer, onChange: handleChange }) {
           </a>
         )}
       </div>
-      <div class="w-100 mb-2"></div>
+      <div className="w-100 mb-2"></div>
     </>
   );
 }

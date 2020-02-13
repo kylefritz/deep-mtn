@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import _ from "lodash";
 
-export default function Q2({ onAnswer: handleAnswer }) {
-  const [numGuests, setNumGuests] = useState(0);
+export default function Q2({answer, onAnswer: handleAnswer }) {
+  const guests = answer || [];
+  const [numGuests, setNumGuests] = useState(guests.length);
   const { register, handleSubmit } = useForm();
   const onSubmit = guestsDict => {
     const guests = _.compact(Object.values(guestsDict));
@@ -22,6 +23,7 @@ export default function Q2({ onAnswer: handleAnswer }) {
             <Guest
               key={i}
               index={i}
+              name={guests[i]}
               onDelete={isLast ? deleteLast : null}
               register={register}
             />
@@ -45,7 +47,7 @@ export default function Q2({ onAnswer: handleAnswer }) {
 }
 Q2.question = "With who else?";
 
-function Guest({ index, onDelete, register }) {
+function Guest({ index, onDelete, register, name }) {
   return (
     <div className="form-group">
       {onDelete && (
@@ -68,6 +70,7 @@ function Guest({ index, onDelete, register }) {
         name={`guest-${index}`}
         ref={register}
         aria-describedby={`guest-${index}Help`}
+        defaultValue={name}
       />
       <small id={`guest-${index}Help`} className="form-text text-muted"></small>
     </div>
