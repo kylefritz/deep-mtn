@@ -12,7 +12,7 @@ export default function Summary({
         We're so looking forward to hosting you for our wedding at Deep
         Mountain.
       </p>
-      <h3 className="mb-3">Here's what we got so far!</h3>
+      <h3 className="mb-3">Here's what we've got so far!</h3>
       <div className="row">
         {questions.map(([klass, answer], i) => (
           <Question
@@ -35,6 +35,21 @@ function formatAnswer(answer)
       return "Just me"
     }
     return answer.join((', '))
+  }
+
+  if(_.isObject(answer)){
+    const events = []
+    Object.entries(answer).forEach(([event, going]) =>{
+      switch(going){
+        case "yes":
+          events.push(event);
+          break;
+        case "maybe":
+          events.push(`${event} (maybe)`);
+          break;
+      }
+    })
+    return events.join(", ");
   }
 
   return answer;

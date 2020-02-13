@@ -5,7 +5,6 @@ import _ from "lodash";
 export default function Q3({ onAnswer: handleAnswer }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
-    console.log(data);
     handleAnswer(data);
   };
 
@@ -19,7 +18,7 @@ export default function Q3({ onAnswer: handleAnswer }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           {events.map(name => (
-            <Event key={name} name={name} />
+            <Event key={name} name={name} register={register} />
           ))}
         </div>
 
@@ -32,7 +31,7 @@ export default function Q3({ onAnswer: handleAnswer }) {
 }
 Q3.question = "Which events?";
 
-function Event({ name }) {
+function Event({ name, register }) {
   const key = _.kebabCase(name);
   return (
     <div className="col">
@@ -46,9 +45,10 @@ function Event({ name }) {
             <input
               className="form-check-input"
               type="radio"
-              name={key}
+              name={name}
               id={`${key}-yes`}
               value="yes"
+              ref={register}
             />
             <label className="form-check-label" htmlFor={`${key}-yes`}>
               Yes!
@@ -58,9 +58,10 @@ function Event({ name }) {
             <input
               className="form-check-input"
               type="radio"
-              name={key}
+              name={name}
               id={`${key}-maybe`}
               value="maybe"
+              ref={register}
             />
             <label className="form-check-label" htmlFor={`${key}-maybe`}>
               Maybe
@@ -70,9 +71,10 @@ function Event({ name }) {
             <input
               className="form-check-input"
               type="radio"
-              name={key}
+              name={name}
               id={`${key}-no`}
               value="no"
+              ref={register}
             />
             <label className="form-check-label" htmlFor={`${key}-no`}>
               No
