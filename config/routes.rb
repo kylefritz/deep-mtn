@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: "home#show"
-  resource :rsvp
+  resources :rsvp, only: [:new]
+  resources :guests, only: [:show, :update] do
+    get 'search', on: :collection
+  end
 
   # sign in
   get "/auth" => redirect("/users/sign_in")

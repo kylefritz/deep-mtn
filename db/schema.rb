@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_05_221918) do
+ActiveRecord::Schema.define(version: 2020_02_13_232238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,6 +187,26 @@ ActiveRecord::Schema.define(version: 2020_01_05_221918) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_content_types_on_name", unique: true
+  end
+
+  create_table "guest_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.bigint "guest_category_id", null: false
+    t.string "name1", null: false
+    t.string "email1"
+    t.string "name2"
+    t.string "email2"
+    t.integer "priority", null: false
+    t.json "rsvp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guest_category_id"], name: "index_guests_on_guest_category_id"
+    t.index ["name1"], name: "index_guests_on_name1"
   end
 
   create_table "pages", force: :cascade do |t|
