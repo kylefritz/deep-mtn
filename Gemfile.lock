@@ -252,6 +252,9 @@ GEM
     parser (2.7.0.0)
       ast (~> 2.4.0)
     pg (1.2.0)
+    pg_search (2.3.2)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     popper_js (1.14.5)
@@ -449,6 +452,7 @@ DEPENDENCIES
   olive_branch
   paper_trail
   pg (>= 0.18, < 2.0)
+  pg_search
   premailer-rails
   puma (>= 3.12.2)
   rails (~> 6)

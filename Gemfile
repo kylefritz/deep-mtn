@@ -24,6 +24,7 @@ gem "naturalsort", require: "natural_sort_kernel" # implements a natural, human-
 gem "newrelic_rpm" # debugging to new relic
 gem "olive_branch" # convert snake_case to camelCase for json
 gem "paper_trail" # audits
+gem "pg_search" # search
 gem "pg", ">= 0.18", "< 2.0"
 gem "premailer-rails" # Stylesheet inlining for email
 gem "puma", ">= 3.12.2" # web/app server

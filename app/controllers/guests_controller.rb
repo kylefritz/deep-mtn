@@ -2,7 +2,7 @@ class GuestsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def search
-    @guests = Guest.all
+    @guests = Guest.search(params[:q])
     render formats: :json
   end
 
